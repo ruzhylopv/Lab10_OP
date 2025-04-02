@@ -12,12 +12,16 @@
 #         записати у hashmap і присвоїти ключу цієї ноди значення 0
 
 def loop_size(node):
-    hashmap = {node: 0}
+    slow = node
+    fast = node
     while True:
-        node = node.next
-        for n in hashmap:
-            hashmap[n] += 1
-
-        if node in hashmap:
-            return hashmap[node]
-        hashmap[node] = 0
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            while True:
+                cnt = 0
+                while True:
+                    slow = slow.next
+                    cnt += 1
+                    if slow == fast:
+                        return cnt
