@@ -18,10 +18,9 @@ def loop_size(node):
         slow = slow.next
         fast = fast.next.next
         if slow == fast:
+            cnt = 0
             while True:
-                cnt = 0
-                while True:
-                    slow = slow.next
-                    cnt += 1
-                    if slow == fast:
-                        return cnt
+                slow = slow.next
+                cnt += 1
+                if slow == fast:
+                    return cnt
