@@ -26,7 +26,7 @@ def build(array):
 
 
 def swap_pairs(head):
-    if head.next is None:
+    if head is None or head.next is None:
         return head
     probe = head.next
     prev = head
